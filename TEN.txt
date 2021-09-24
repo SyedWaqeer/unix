@@ -1,0 +1,69 @@
+--trainer name is equal to KHIZER
+db.trainers.find({name:KHIZER})
+
+
+--trainer name is equal to SAQIB
+db.trainers.find({name:SAQIB})
+
+
+--trainer name is equal to SAQIB in formatted output
+db.trainers.find({name:KHIZER}).pretty
+
+
+-- trainer likes 7000
+db.trainers.find({likes:7000})
+ 
+
+--trainer likes < 7000
+db.trainers.find({likes:{$lt:7000}}).pretty()
+ 
+
+--trainer likes >6000
+db.trainers.find({likes:{$gt:6000}}).pretty()
+ 
+
+--trainer likes >=6000
+ db.trainers.find({likes:{$gte:6000}}).pretty()
+
+
+--trainer likes <= 6000
+ db.trainers.find({likes:{$lte:6000}}).pretty()
+
+
+trainer likes  not equal 6000
+db.trainers.find({likes:{$lt:6000},{$gt:7000}}).pretty()
+
+
+--trainer who skill are html or css
+db.trainers.find({tags:{$in:['HTML','CSS3']}}).pretty()
+
+
+--trainer who skill are html or javascript
+db.trainers.find({tags:{$in:['HTML','CSS3']}}).pretty()
+
+
+--trainers who tags are HTML or javascript, sort by name
+db.trainers.find({tags:{$in:['HTML','Javascript']}}).sort({name:1}).pretty()
+
+
+--trainers who tags are HTML or javascript, sort by name descending
+db.trainers.find({tags:{$in:['HTML','Javascript']}}).sort({name:-1}).pretty()
+
+
+--trainer likes <6000 and >7000
+ db.trainers.find({likes:{$gte:5000,$lte:7000}}).pretty()
+
+
+--trainer whos tags are html and css
+
+
+--update
+db.trainers.update({likes:5000},{$set:{likes:1010}})
+
+
+trainer whos like is gt 5000 skill is html
+ db.trainers.find({$and:[{likes:{$gt:5000}},{tags:'HTML'}]}).pretty()
+
+---cursor
+var mycur =db.trainers.find({tags:'HTML5'})
+ mycur.forEach(printjson)
