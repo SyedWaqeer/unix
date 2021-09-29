@@ -1,0 +1,117 @@
+package com.company;
+
+
+import java.util.Scanner;
+
+class Calculator
+{
+
+    int add(int a , int b)
+    {
+        int sum=a+b;
+        System.out.println(sum);
+        return sum;
+    }
+
+    int sub(int a , int b)
+    {
+        int subs=a-b;
+        System.out.println(subs);
+        return subs;
+    }
+    int mult(int a , int b)
+    {
+        int mul=a*b;
+        System.out.println(mul);
+        return mul;
+    }
+
+    int div(int a , int b)
+    {
+        int divs=a/b;
+        System.out.println(divs);
+        return divs;
+    }
+
+}
+
+public class calextend extends Calculator {
+    int sqr(int a) {
+        int sqrt = a * a;
+        System.out.println(sqrt);
+        return sqrt;
+    }
+
+    int od(int a) {
+        if (a % 2 == 0) {
+            System.out.println(a + "is even");
+        } else {
+            System.out.println(a + "is odd");
+        }
+        return 0;
+    }
+
+    void prime(int a) {
+        int i, m = 0, flag = 0;
+        m = a / 2;
+        if (a == 0 || a == 1) {
+            System.out.println(a + "is not prime");
+        } else {
+            for (i = 2; i <= m; i++) {
+                if (a % i == 0) {
+                    System.out.println(a + "is not prime");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                System.out.println(a + "is  prime");
+            }
+        }
+    }
+
+
+
+}
+public class input extends calextend {
+    public static void main(String arg[]) {
+
+        Calculator obj1 = new Calculator();
+        calextend obj2 = new calextend();
+        while (true) {
+            System.out.println("Enter the options");
+            System.out.println("   1)Add\n   2)sub\n   3)mul\n  4)div\n  5)sqr\n 6)od  7)prime  8)Exit");
+            Scanner sc = new Scanner(System.in);
+            int s = sc.nextInt();
+            switch (s) {
+                case 1:
+                    obj1.add(1,2);
+                    break;
+                case 2:
+                    obj1.sub(1, 2);
+                    break;
+                case 3:
+                    obj1.mult(1, 2);
+                    break;
+                case 4:
+                    obj2.div(1, 2);
+                    break;
+                case 5:
+                    obj2.sqr(2);
+                    break;
+                case 6:
+                    obj2.od(2);
+                    break;
+                case 7:
+                    obj2.prime(2);
+                    break;
+                case 8:
+                    System.exit(0);
+                default:
+                    System.out.println("Wrong input");
+            }
+
+
+        }
+    }
+}
