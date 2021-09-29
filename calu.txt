@@ -1,0 +1,101 @@
+import java.util.Scanner;
+class calculator
+{
+  static int n,sum=0,sub,mul=1;
+    public static void sum() {
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println(enter how many numbers you want sum);
+        n=sc.nextInt();
+        int a[]=new int[n];
+        System.out.println(enter the +n+ numbers );
+        for(int i=0;in;i++)
+        {
+            System.out.println(enter  number  +(i+1)+);
+            a[i]=sc.nextInt();
+        }
+        for (int i = 0; i  n; i++) {
+            sum += a[i];
+
+        }
+        System.out.println(sum of  + n +  numbers is = + sum);
+
+    }
+    public static void sub() {
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println(enter how many numbers you want sub);
+        n=sc.nextInt();
+        int a[]=new int[n];
+        System.out.println(enter the +n+ numbers );
+        for(int i=0;in;i++)
+        {
+            System.out.println(enter  number  +(i+1)+);
+            a[i]=sc.nextInt();
+        }
+        sub=a[0];
+        for (int i = 1; i  n; i++) {
+            sub -= a[i];
+
+        }
+        System.out.println(sum of  + n +  numbers is = + sub);
+
+    }
+    public static void mul() {
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println(enter how many numbers you want sum);
+        n=sc.nextInt();
+        int a[]=new int[n];
+        System.out.println(enter the +n+ numbers );
+        for(int i=0;in;i++)
+        {
+            System.out.println(enter  number  +(i+1)+);
+            a[i]=sc.nextInt();
+        }
+        for (int i = 0; i  n; i++) {
+            mul = a[i];
+
+        }
+        System.out.println(sum of  + n +  numbers is = + mul);
+
+    }
+    public static void div() {
+        int d,e,divs;
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println(enter the no1);
+        d=sc.nextInt();
+
+        System.out.println(enter the no 2 );
+        e=sc.nextInt();
+        divs=de;
+        System.out.println(div of  numbers is = + divs);
+
+    }
+    public static void main(String arg[])
+    {
+
+
+        while(true){
+            System.out.println(Enter the options);
+            System.out.println(   1)Addn   2)subn   3)muln  4)divn    5)Exit);
+            Scanner sc = new Scanner(System.in);
+            int s = sc.nextInt();
+            switch(s){
+                case 1 sum();
+                    break;
+                case 2 sub();
+                    break;
+                case 3 mul();
+                    break;
+                case 4div();
+                    break;
+                case 5System.exit(0);
+                defaultSystem.out.println(Wrong input);
+            }
+
+
+        }
+    }
+}
