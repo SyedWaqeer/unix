@@ -1,0 +1,53 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class ContactmanagerTest {
+    public static Contactmanager contactmanager;
+    @BeforeAll
+    public static void setup(){
+        System.out.println("instanttiating contact manager before the test execution");
+        contactmanager = new Contactmanager();
+    }
+
+    @Test
+    @DisplayName("shuold create contact ")
+    public void shouldCreateContact(){
+
+        contactmanager.addContact("waqeer","syed","0990046808");
+        Assertions.assertFalse(contactmanager.getAllContacts().isEmpty());
+        Assertions.assertEquals(1,contactmanager.getAllContacts().size());
+
+    }
+    @Test
+    @DisplayName("should not create contact when firstname is null")
+    public void shouldThrowErrorWhenFirstNameIsNull(){
+
+        Assertions.assertThrows(RuntimeException.class, ()->{
+            contactmanager.addContact(null,"khizer","0911399312");
+        });
+
+    }
+    @Test
+    @DisplayName("should not create contact when lastname is null")
+    public void shouldThrowErrorWhenLastNameIsNull(){
+
+        Assertions.assertThrows(RuntimeException.class, ()->{
+            contactmanager.addContact("syed",null,"0911399312");
+        });
+
+    }
+    @Test
+    @DisplayName("should not create contact when phonenumber is null")
+    public void shouldThrowErrorWhenPhonenumberIsNull(){
+
+        Assertions.assertThrows(RuntimeException.class, ()->{
+            contactmanager.addContact("syed","khizer",null);
+        });
+
+    }
+
+}
