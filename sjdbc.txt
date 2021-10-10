@@ -1,0 +1,30 @@
+public interface cartInterface {
+    public void addbooktocart();//all display in bookstore /book.delete()
+    public void deletebookfromcart();
+    public void displaybookfromcart();
+    public void checkuserinlist();//this method will check that user is present in user table
+}
+
+
+
+public interface BookInterface {
+    public void insert();
+    public void delete();
+    public void display();
+    public void update();
+}
+
+public interface userInter {
+    public void adduser();
+    public void deleteuser();
+    public void updateuser();
+    public void display();
+}
+
+
+public interface Main {
+    public void option();//1:book store,2:user,3:cart,4:exit
+    public void bookoperation();//option on book store(insert,delete,..)
+    public void useroperation();//option of user(adduser,delete,display,..)
+    public void cartoperation();//option of cart(addbook to the cart,....)
+}
